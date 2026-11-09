@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Mechatronics Hub – Engineering Mechatronics</title>
+<meta name="description" content="Study materials for the Mechatronics Engineering program: Mathematics, Physics, Mechanics, English, Computer and Production.">
+<meta name="theme-color" content="#060912">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%E2%9A%99%EF%B8%8F%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+<style>
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+--bg:#f4f6fb;--tx:#0b1020;--mut:#5a6479;--gl:rgba(255,255,255,.7);--bd:rgba(20,30,70,.09);--sh:0 8px 30px rgba(25,40,100,.1);--grid:rgba(20,30,80,.05);
+--e:#0a84ff;--m:#ff9f0a;--p:#7d5cff;--g:#30d158}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#060912;--tx:#f3f5fc;--mut:#98a2bb;--gl:rgba(22,28,48,.62);--bd:rgba(255,255,255,.09);--sh:0 10px 40px rgba(0,0,0,.45);--grid:rgba(255,255,255,.035)}}
+:root[data-theme="dark"]{--bg:#060912;--tx:#f3f5fc;--mut:#98a2bb;--gl:rgba(22,28,48,.62);--bd:rgba(255,255,255,.09);--sh:0 10px 40px rgba(0,0,0,.45);--grid:rgba(255,255,255,.035)}
+*{box-sizing:border-box}html{scroll-padding-top:90px;scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--tx);font-family:Inter,-apple-system,"SF Pro Display",system-ui,sans-serif;min-height:100vh;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+.bg{position:fixed;inset:0;z-index:0;background:radial-gradient(60vmax 40vmax at 85% -10%,rgba(10,132,255,.28),transparent 60%),radial-gradient(50vmax 40vmax at -10% 105%,rgba(255,159,10,.2),transparent 60%),radial-gradient(40vmax 30vmax at 50% 50%,rgba(125,92,255,.12),transparent 70%)}
+.bg::after{content:"";position:absolute;inset:0;background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:44px 44px;mask-image:radial-gradient(ellipse at 50% 20%,#000 20%,transparent 75%);-webkit-mask-image:radial-gradient(ellipse at 50% 20%,#000 20%,transparent 75%)}
+.wrap{position:relative;z-index:1;max-width:1120px;margin:0 auto;padding:0 18px}
+.glass{background:var(--gl);backdrop-filter:blur(24px) saturate(170%);-webkit-backdrop-filter:blur(24px) saturate(170%);border:1px solid var(--bd);border-radius:24px;box-shadow:var(--sh)}
+.nav{position:sticky;top:calc(env(safe-area-inset-top,0px) + 10px);z-index:20;margin-top:12px}
+.nav .in{display:flex;align-items:center;justify-content:space-between;padding:10px 12px 10px 16px;border-radius:99px;gap:10px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:700;letter-spacing:-.2px}
+.mark{width:32px;height:32px;border-radius:10px;display:grid;place-items:center;color:#fff;background:linear-gradient(135deg,var(--e),var(--p))}.mark svg{width:18px;height:18px}
+svg.i{fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.btn{border:0;cursor:pointer;font:600 14px Inter,sans-serif;color:var(--tx);background:var(--gl);border:1px solid var(--bd);padding:10px 18px;border-radius:99px;transition:transform .15s,box-shadow .15s}
+.btn:hover{transform:translateY(-1px)}.btn.pri{background:linear-gradient(135deg,var(--e),var(--p));color:#fff;border:0;box-shadow:0 6px 18px rgba(10,132,255,.35)}.btn.dng{color:#ff453a}.btn.sm{padding:7px 13px;font-size:13px}
+.badge{font-size:12px;font-weight:600;padding:6px 12px;border-radius:99px;background:rgba(10,132,255,.14);color:var(--e)}
+.hero{display:grid;grid-template-columns:1.15fr .85fr;align-items:center;gap:10px;padding:48px 0 30px}
+@media(max-width:800px){.hero{grid-template-columns:1fr;text-align:center;padding-top:30px}.cta{justify-content:center}}
+.eyebrow{display:inline-block;font-size:12px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;color:var(--e);margin-bottom:14px}
+h1{font-size:clamp(36px,6.4vw,64px);line-height:1.05;letter-spacing:-1.5px;margin:0 0 18px;font-weight:800}
+h1 .g{background:linear-gradient(90deg,var(--e),var(--p) 55%,var(--m));-webkit-background-clip:text;background-clip:text;color:transparent}
+.lead{color:var(--mut);font-size:18px;line-height:1.65;margin:0 0 26px;max-width:540px}
+@media(max-width:800px){.lead{margin-inline:auto}}
+.cta{display:flex;gap:10px;flex-wrap:wrap}
+.scene{height:330px;perspective:900px;display:grid;place-items:center}
+.rig{position:relative;width:150px;height:150px;transform-style:preserve-3d;animation:spin 22s linear infinite;transform:rotateX(-20deg)}
+.face{position:absolute;inset:0;display:grid;place-items:center;color:#fff;border-radius:24px;border:1px solid rgba(255,255,255,.35);box-shadow:inset 0 0 40px rgba(255,255,255,.2)}.face svg{width:54px;height:54px;stroke-width:1.4}
+.f1{background:linear-gradient(135deg,#0a84ffd9,#5ac8fad9);transform:translateZ(75px)}.f2{background:linear-gradient(135deg,#ff9f0ad9,#ff453ad9);transform:rotateY(90deg) translateZ(75px)}
+.f3{background:linear-gradient(135deg,#7d5cffd9,#5e5ce6d9);transform:rotateY(180deg) translateZ(75px)}.f4{background:linear-gradient(135deg,#30d158d9,#0a84ffd9);transform:rotateY(-90deg) translateZ(75px)}
+.f5{background:#ffffff1f;transform:rotateX(90deg) translateZ(75px)}.f6{background:#ffffff1f;transform:rotateX(-90deg) translateZ(75px)}
+.ring{position:absolute;left:50%;top:50%;border-radius:50%;border:1.5px dashed;translate:-50% -50%}
+.r1{width:250px;height:250px;border-color:#0a84ff;transform:rotateX(72deg);animation:rs 10s linear infinite}.r2{width:320px;height:320px;border-color:#ff9f0a;transform:rotateX(72deg) rotateY(25deg);animation:rs 16s linear infinite reverse}
+@keyframes spin{to{transform:rotateX(-20deg) rotateY(360deg)}}@keyframes rs{to{rotate:360deg}}
+.strip{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:10px 0 6px}@media(max-width:800px){.strip{grid-template-columns:1fr}}
+.dis{padding:20px 22px;display:flex;gap:14px;align-items:flex-start}.dis .t{width:42px;height:42px;border-radius:13px;display:grid;place-items:center;color:#fff;flex:none}.dis .t svg{width:22px;height:22px}
+.dis b{display:block;margin-bottom:3px}.dis p{margin:0;color:var(--mut);font-size:14px;line-height:1.55}
+.sec{display:flex;justify-content:space-between;align-items:flex-end;gap:12px;margin:52px 0 18px;flex-wrap:wrap}
+.sec h2{margin:0;font-size:30px;letter-spacing:-.8px}.sec p{margin:4px 0 0;color:var(--mut)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:16px}
+.card{padding:24px;cursor:pointer;position:relative;overflow:hidden;transition:transform .25s,box-shadow .25s;min-height:210px;display:flex;flex-direction:column}
+.card:hover{transform:translateY(-6px);box-shadow:0 18px 50px rgba(10,132,255,.2)}
+.card::before{content:"";position:absolute;inset:0 0 auto 0;height:4px;background:var(--c)}
+.card .top{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}
+.ic{width:54px;height:54px;border-radius:16px;display:grid;place-items:center;color:#fff;font-size:24px;box-shadow:0 8px 22px rgba(0,0,0,.22)}.ic svg{width:27px;height:27px}
+.num{font-size:13px;font-weight:700;color:var(--mut);letter-spacing:1px}
+.card h3{margin:0 0 6px;font-size:21px;letter-spacing:-.4px}.card p{margin:0;color:var(--mut);font-size:14.5px;line-height:1.6;flex:1}
+.go{margin-top:18px;font-weight:600;font-size:14px;color:var(--e)}.ec{position:absolute;bottom:18px;right:16px}
+.empty{padding:34px;text-align:center;color:var(--mut)}
+.crumb{margin:26px 0 14px;color:var(--mut);font-size:14px;display:flex;gap:8px;align-items:center}.crumb a{cursor:pointer;color:var(--e);font-weight:600}
+.hd{padding:26px;display:flex;gap:18px;align-items:center;flex-wrap:wrap}.hd .ic{width:68px;height:68px;border-radius:20px}.hd .ic svg{width:34px;height:34px}
+.hd div.tx{flex:1;min-width:220px}.hd h1{font-size:32px;margin:0 0 4px;letter-spacing:-.8px}.hd p{margin:0;color:var(--mut)}.admin{display:flex;gap:8px;flex-wrap:wrap}
+.file{display:flex;align-items:center;gap:14px;padding:16px 18px;margin-bottom:10px;border-radius:18px;flex-wrap:wrap}
+.tag{font-size:11px;font-weight:700;letter-spacing:.8px;padding:6px 10px;border-radius:8px;color:#fff;min-width:58px;text-align:center}
+.mat{flex:1;min-width:180px;display:flex;flex-direction:column;gap:4px}.mat b{font-weight:600;word-break:break-word}.mat small{color:var(--mut)}
+.mat video,.mat img{max-width:100%;border-radius:12px;margin-top:8px}
+#aib{position:fixed;z-index:40;right:18px;bottom:calc(env(safe-area-inset-bottom,0px) + 18px);display:flex;align-items:center;gap:10px;border:0;cursor:pointer;color:#fff;font:600 15px Inter,sans-serif;padding:14px 20px;border-radius:99px;background:linear-gradient(135deg,var(--e),var(--p));box-shadow:0 10px 30px rgba(10,132,255,.5)}#aib svg{width:20px;height:20px}
+#chat{display:none;position:fixed;z-index:41;right:12px;left:12px;margin-left:auto;bottom:calc(env(safe-area-inset-bottom,0px) + 12px);max-width:430px;height:min(580px,80vh);flex-direction:column;overflow:hidden}#chat.on{display:flex}
+.ch{padding:14px 18px;display:flex;justify-content:space-between;align-items:center;font-weight:700;border-bottom:1px solid var(--bd)}.ch small{display:block;color:var(--mut);font-weight:500}
+#msgs{flex:1;overflow-y:auto;padding:14px;display:flex;flex-direction:column;gap:10px}
+.msg{padding:11px 15px;border-radius:18px;max-width:88%;line-height:1.6;font-size:14.5px;white-space:pre-wrap}.me{align-self:flex-end;background:linear-gradient(135deg,var(--e),var(--p));color:#fff}.bot{align-self:flex-start;background:var(--gl);border:1px solid var(--bd)}
+.cf{display:flex;gap:8px;padding:12px;border-top:1px solid var(--bd)}
+input,textarea{font:500 15px Inter,sans-serif;color:var(--tx);background:var(--gl);border:1px solid var(--bd);border-radius:14px;padding:11px 14px;width:100%}.cf input{flex:1}
+dialog{border:0;background:transparent;padding:0;color:var(--tx);max-width:min(440px,92vw);width:100%}dialog::backdrop{background:rgba(0,0,0,.45);backdrop-filter:blur(6px)}.dl{padding:24px;display:flex;flex-direction:column;gap:12px}
+footer{text-align:center;color:var(--mut);font-size:13px;padding:50px 0 110px}
+body.adm .ed{outline:1.5px dashed rgba(10,132,255,.55);outline-offset:3px;border-radius:6px;cursor:text}body.adm .ed:focus{outline:2px solid var(--e);background:rgba(10,132,255,.1)}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;scroll-behavior:auto!important}}
+
+.frame{background:#fff;border-radius:20px;overflow:hidden;border:1px solid var(--bd);box-shadow:var(--sh)}.frame iframe{display:block;width:100%;height:620px;border:0}
+.note{color:var(--mut);font-size:13.5px;margin:10px 4px 0}a.card{text-decoration:none;color:inherit}
+#chat .body{padding:16px;display:flex;flex-direction:column;gap:10px}#chat textarea{resize:none}
+</style>
+</head>
+<body>
+<div class="bg"></div>
+<div class="wrap">
+<header class="nav"><div class="glass in"><a class="brand" href="#" style="text-decoration:none;color:inherit"><span class="mark" id="mk"></span><span id="brand"></span></a></div></header>
+<main id="app"></main>
+<footer id="foot"></footer>
+</div>
+<button id="aib"><span id="aii"></span>AI Tutor</button>
+<section id="chat" class="glass">
+<div class="ch"><div>AI Study Tutor<small>Type your question, then choose an assistant</small></div><button class="btn sm" id="cx">Close</button></div>
+<div class="body"><textarea id="q" rows="5" placeholder="e.g. Explain Ohm’s law with an example"></textarea><button class="btn pri" id="g1">Ask Claude</button><button class="btn" id="g2">Ask ChatGPT</button></div>
+</section>
+<script>
+/* ====== EDIT HERE: texts and subjects ====== */
+const SITE={brand:'Mechatronics Hub',eyebrow:'Mechatronics Engineering Program',h1a:'Engineering',h1b:'Mechatronics',
+lead:'Everything you need to study, in one place: lecture notes, files and videos for every subject, always up to date.',
+d:[['bolt','Electrical','Circuits, power, sensors and control electronics.'],['gear','Mechanical','Statics, dynamics, machine design and production.'],['code','Software','Programming, embedded systems and automation.']],
+sec:'Study Now',sub:'Select a subject to open its materials.',foot:'© Mechatronics Engineering Program · Eng. Ahmed Abdalhamed'};
+/* folder = the ID at the end of the Google Drive folder link (folder must be shared: Anyone with the link) */
+const SUBJECTS=[
+{id:'math',title:'Mathematics',icon:'sigma',desc:'Calculus, linear algebra and differential equations.',folder:'1hErDkH6WhoCNeYyYpgEG5_BONVsU3kVO'},
+{id:'physics',title:'Physics',icon:'atom',desc:'Mechanics, electricity and magnetism, and waves.',folder:'14_InzObWL725xgE9n-JKMGu-SxzPoXU5'},
+{id:'mechanics',title:'Mechanics',icon:'gear',desc:'Statics, dynamics and machine design fundamentals.',folder:'14mnkeXHh8oiV6fa5n40jDBKWQliUqIDM'},
+{id:'english',title:'English',icon:'book',desc:'Academic reading and writing for engineering students.',folder:'1fveaWsk9sKKV5Ivml-i5T7MEqYig37sE'},
+{id:'computer',title:'Computer',icon:'code',desc:'Programming, algorithms and computer skills.',folder:'1ZtEret_3VibsEN25zPrhtojQIcRSbMH_'},
+{id:'production',title:'Production',icon:'factory',desc:'Manufacturing processes, quality and production planning.',folder:'1Er922G5eiNndXqIaH5eRZmnWUXi4AKsO'}
+];
+/* ====== END OF EDIT AREA ====== */
+const $=s=>document.querySelector(s),esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const P={bolt:'<path d="M13 2 4 14h7l-1 8 9-12h-7z"/>',gear:'<circle cx="12" cy="12" r="3"/><circle cx="12" cy="12" r="7"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9 7 7M17 17l2.1 2.1M19.1 4.9 17 7M7 17l-2.1 2.1"/>',code:'<path d="m8 7-5 5 5 5M16 7l5 5-5 5M14 4l-4 16"/>',chip:'<rect x="6" y="6" width="12" height="12" rx="2"/><path d="M9 2v4M15 2v4M9 18v4M15 18v4M2 9h4M2 15h4M18 9h4M18 15h4"/>',sigma:'<path d="M18 5H6l6 7-6 7h12"/>',atom:'<circle cx="12" cy="12" r="1.5"/><ellipse cx="12" cy="12" rx="10" ry="4"/><ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(60 12 12)"/><ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(120 12 12)"/>',book:'<path d="M3 5h6a3 3 0 0 1 3 3v12a2 2 0 0 0-2-2H3zM21 5h-6a3 3 0 0 0-3 3v12a2 2 0 0 1 2-2h7z"/>',factory:'<path d="M3 21V10l6 4v-4l6 4V6h3v15zM8 17h1M13 17h1"/>',spark:'<path d="m12 3 1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8zM19 16l.8 2.2L22 19l-2.2.8L19 22l-.8-2.2L16 19l2.2-.8z"/>'};
+const svg=n=>`<svg class="i" viewBox="0 0 24 24">${P[n]}</svg>`;
+const icon=c=>P[c]?svg(c):esc(c||'•');
+const grads=['linear-gradient(135deg,#0a84ff,#5ac8fa)','linear-gradient(135deg,#7d5cff,#5e5ce6)','linear-gradient(135deg,#ff9f0a,#ff453a)','linear-gradient(135deg,#30d158,#0a84ff)','linear-gradient(135deg,#ff375f,#ff9f0a)','linear-gradient(135deg,#64d2ff,#30d158)'];
+let ctxTitle='';
+function home(){
+  ctxTitle='';document.title=SITE.brand+' – '+SITE.h1a+' '+SITE.h1b;
+  const dis=SITE.d.map(([ic,t,d],i)=>`<div class="glass dis"><span class="t" style="background:${grads[[0,2,1][i]]}">${svg(ic)}</span><div><b>${esc(t)}</b><p>${esc(d)}</p></div></div>`).join('');
+  $('#app').innerHTML=`<section class="hero"><div><span class="eyebrow">${esc(SITE.eyebrow)}</span><h1>${esc(SITE.h1a)} <span class="g">${esc(SITE.h1b)}</span></h1><p class="lead">${esc(SITE.lead)}</p>
+  <div class="cta"><button class="btn pri" id="b1">Browse subjects</button><button class="btn" id="b2">Ask an AI tutor</button></div></div>
+  <div class="scene" id="sc"><div class="ring r1"></div><div class="ring r2"></div><div class="rig" id="rig"><div class="face f1">${svg('bolt')}</div><div class="face f2">${svg('gear')}</div><div class="face f3">${svg('code')}</div><div class="face f4">${svg('chip')}</div><div class="face f5"></div><div class="face f6"></div></div></div></section>
+  <div class="strip">${dis}</div>
+  <div class="sec" id="subjects"><div><h2>${esc(SITE.sec)}</h2><p>${esc(SITE.sub)}</p></div></div>
+  <div class="grid">${SUBJECTS.map((c,i)=>`<a class="glass card" href="#${esc(c.id)}" style="--c:${grads[i%6]}"><div class="top"><div class="ic" style="background:${grads[i%6]}">${icon(c.icon)}</div><span class="num">${String(i+1).padStart(2,'0')}</span></div><h3>${esc(c.title)}</h3><p>${esc(c.desc)}</p><div class="go">Open subject →</div></a>`).join('')}</div>`;
+  $('#b1').onclick=()=>$('#subjects').scrollIntoView();$('#b2').onclick=()=>$('#chat').classList.add('on');
+  const sc=$('#sc');sc.onpointermove=e=>{const r=sc.getBoundingClientRect(),g=$('#rig');g.style.animationPlayState='paused';g.style.transform=`rotateX(${-((e.clientY-r.top)/r.height-.5)*80}deg) rotateY(${((e.clientX-r.left)/r.width-.5)*160}deg)`};
+  sc.onpointerleave=()=>{$('#rig').style.transform='';$('#rig').style.animationPlayState='running'};
+}
+function course(c){
+  const i=SUBJECTS.indexOf(c),f=encodeURIComponent(c.folder);ctxTitle=c.title;document.title=c.title+' – '+SITE.brand;
+  $('#app').innerHTML=`<div class="crumb"><a href="#">All subjects</a><span>/</span><span>${esc(c.title)}</span></div>
+  <div class="glass hd"><div class="ic" style="background:${grads[i%6]}">${icon(c.icon)}</div><div class="tx"><h1>${esc(c.title)}</h1><p>${esc(c.desc)}</p></div>
+  <div class="admin"><a class="btn sm" style="text-decoration:none" target="_blank" rel="noopener" href="https://drive.google.com/drive/folders/${f}">Open in Drive ↗</a><button class="btn pri sm" id="ai1">Ask AI about ${esc(c.title)}</button></div></div>
+  <div class="sec" style="margin-top:34px"><div><h2>Course Materials</h2><p>Files update automatically when new material is added.</p></div></div>
+  <div class="frame"><iframe loading="lazy" src="https://drive.google.com/embeddedfolderview?id=${f}#list" title="${esc(c.title)} materials"></iframe></div>
+  <p class="note">If the list doesn’t load, use “Open in Drive”.</p>`;
+  $('#ai1').onclick=()=>$('#chat').classList.add('on');scrollTo(0,0);
+}
+function route(){const id=decodeURIComponent(location.hash.slice(1)),c=SUBJECTS.find(s=>s.id===id);c?course(c):home();if(!c)scrollTo(0,0)}
+addEventListener('hashchange',route);
+$('#mk').innerHTML=svg('gear');$('#aii').innerHTML=svg('spark');$('#brand').textContent=SITE.brand;$('#foot').textContent=SITE.foot;
+$('#cx').onclick=()=>$('#chat').classList.remove('on');$('#aib').onclick=()=>$('#chat').classList.toggle('on');
+function go(base){const q=$('#q').value.trim();if(!q)return;const p=(ctxTitle?`I'm a mechatronics engineering student studying ${ctxTitle}. `:`I'm a mechatronics engineering student. `)+q;open(base+encodeURIComponent(p),'_blank','noopener')}
+$('#g1').onclick=()=>go('https://claude.ai/new?q=');$('#g2').onclick=()=>go('https://chatgpt.com/?q=');
+route();
+</script>
+</body>
+</html>
